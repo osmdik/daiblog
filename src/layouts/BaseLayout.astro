@@ -1,0 +1,32 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "@fontsource/josefin-sans";
+
+const { title, description} = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body>
+		<Header />
+		<div
+			class="container max-w-5xl mx-auto px-2 sm:px-6 grid grid-cols-1 sm:grid-cols-4 gap-y-8 sm:gap-8 lg:gap-20 tracking-wider"
+		>
+			<main class="col-span-3">
+				<slot />
+			</main>
+			<aside class="col-span-1">
+				<p class="font-['Josefin_Sans'] pl-2 border-b border-gray-500">
+					Archive
+				</p>
+			</aside>
+		</div>
+		<Footer />
+	</body>
+</html>
