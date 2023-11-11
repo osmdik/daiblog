@@ -6,6 +6,10 @@ export default {
 			typography: (theme) => ({
 				DEFAULT: {
 					css: {
+						a : {
+							color: '#337ab7',
+							textDecoration: 'none'
+						},
 						code: {
 							backgroundColor: theme('colors.slate.200'),
 							borderRadius: theme('borderRadius.DEFAULT'),
