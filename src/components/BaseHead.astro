@@ -1,7 +1,7 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
 	title: string;
@@ -11,7 +11,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/daiblog-ogp.jpg' } = Astro.props;
+const { title, description, image = "/daiblog-ogp.jpg" } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -44,3 +44,16 @@ const { title, description, image = '/daiblog-ogp.jpg' } = Astro.props;
 
 <!-- Sitemap -->
 <link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Google tag (gtag.js) -->
+<script
+	type="text/partytown"
+	src="https://www.googletagmanager.com/gtag/js?id=G-9QJFTDVB14"></script>
+<script type="text/partytown">
+	window.dataLayer = window.dataLayer || [];
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag("js", new Date());
+	gtag("config", "G-9QJFTDVB14");
+</script>
