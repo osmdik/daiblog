@@ -6,13 +6,17 @@ export default {
 			typography: (theme) => ({
 				DEFAULT: {
 					css: {
-						a : {
+						a: {
 							color: '#337ab7',
 							textDecoration: 'none'
 						},
 						code: {
+							fontSize: theme('size.[0.9]'),
+							color: theme('colors.gray.600'),
 							backgroundColor: theme('colors.slate.200'),
 							borderRadius: theme('borderRadius.DEFAULT'),
+							marginLeft: theme('spacing.[1]'),
+							marginRight: theme('spacing.[1]'),
 							paddingTop: theme('spacing.[0.5]'),
 							paddingBottom: theme('spacing.[0.5]'),
 							paddingLeft: theme('spacing.[1.5]'),

@@ -6,27 +6,39 @@ import "@fontsource/josefin-sans";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate } = Astro.props;
+const { title, description, pubDate, updatedDate, tags } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
 	<article class="prose max-w-full">
-		<h1 class="mb-2 text-xl lg:text-2xl font-bold">
+		<h1 class="text-xl lg:text-2xl">
 			{title}
 		</h1>
-		<div class="mb-12 sm:text-right">
-			<span class="font-['Josefin_Sans'] text-sm text-gray-600">
-				Publish :{" "}
-				<FormattedDate date={pubDate} />
-			</span>
-			{
-				updatedDate && (
-					<>
-						<br />
-						<span class="font-['Josefin_Sans'] text-sm text-gray-600">
+		<div class="mb-12 flex flex-wrap gap-2 items-baseline">
+			<div
+				class="flex items-center flex-wrap gap-2 font-['Josefin_Sans'] font-light text-xs text-gray-600"
+			>
+				<p class="my-0 whitespace-nowrap">
+					Publish :{" "}
+					<FormattedDate date={pubDate} />
+				</p>
+				{
+					updatedDate && (
+						<p class="my-0 whitespace-nowrap">
 							Update : <FormattedDate date={updatedDate} />
-						</span>
-					</>
+						</p>
+					)
+				}
+			</div>
+			{
+				tags && (
+					<div class="flex items-center flex-wrap gap-2 font-['Josefin_Sans'] font-light text-xs text-gray-600">
+						{tags.map((tag) => (
+							<span class="inline-block align-bottom px-1 pt-1 rounded-sm  bg-slate-200 whitespace-nowrap">
+								{tag}
+							</span>
+						))}
+					</div>
 				)
 			}
 		</div>
