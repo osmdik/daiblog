@@ -5,7 +5,7 @@ pubDate: 2021-04-07
 tags: ["WordPress", "ContactForm7"]
 ---
 
-以前、下記記事で ContactForm7 のよく使うデザインカスタマイズを紹介しました。
+以前、以下の記事で ContactForm7 のよく使うデザインカスタマイズを紹介しました。
 
 この記事では、さらにシンプルで見やすい ContactForm7 のデザインカスタマイズを紹介します。
 
@@ -15,7 +15,7 @@ tags: ["WordPress", "ContactForm7"]
 
 ## HTML
 
-下記が HTML です。
+以下のが HTML です。
 
 ```
 <span class="must">必須</span> お名前
@@ -35,13 +35,13 @@ tags: ["WordPress", "ContactForm7"]
 [submit "送信"]
 ```
 
-今回のカスタマイズでは、必須項目には、下記を項目名の前に入れます。
+今回のカスタマイズでは、必須項目には、以下のを項目名の前に入れます。
 
 ```
 <span class="must">必須</span>
 ```
 
-任意項目には、下記を項目名の前に入れます。
+任意項目には、以下のを項目名の前に入れます。
 
 ```
 <span class="free">任意</span>
@@ -51,7 +51,7 @@ tags: ["WordPress", "ContactForm7"]
 
 ## CSS
 
-下記が CSS となります。
+以下のが CSS となります。
 
 ```
 /************************************
@@ -128,7 +128,7 @@ span.wpcf7-not-valid-tip,
 }
 ```
 
-入力欄を見やすくする下記の CSS ですが、この CSS では今使っている
+入力欄を見やすくする以下の CSS ですが、この CSS では今使っている
 
 -   名前やメールアドレスなどのテキスト入力欄
 -   セレクトボックス
@@ -155,7 +155,7 @@ textarea.wpcf7-form-control.wpcf7-textarea,.wpcf7-select {
 
 作成したお問い合わせフォームから送信されてくるメールの表示です。
 
-メッセージ本文には下記をそのまま使えます。
+メッセージ本文には以下のをそのまま使えます。
 
 お問い合わせされた方： \[your-name\] <\[your-email\]>
 

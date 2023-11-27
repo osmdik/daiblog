@@ -24,7 +24,7 @@ Homebrewを用いたPHPのインストールは以下の手順です。
 
 まずは[Homebrew](https://brew.sh/index_ja)のインストール方法をご紹介します。
 
-Homebrewの公式ホームページ（[https://brew.sh/index\_ja](https://brew.sh/index_ja)）からインストールの手順に従い、ターミナルに下記コードを貼り付けましょう。
+Homebrewの公式ホームページ（[https://brew.sh/index\_ja](https://brew.sh/index_ja)）からインストールの手順に従い、ターミナルに以下のコードを貼り付けましょう。
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -34,7 +34,7 @@ Homebrewの公式ホームページ（[https://brew.sh/index\_ja](https://brew.s
 
 コードを貼り付けてEnterを押すと、パスワードを求められるので端末にログインする際のパスワードを入力します。
 
-パスワード入力後、下記の文言が表示され、処理が一時停止されます。
+パスワード入力後、以下の文言が表示され、処理が一時停止されます。
 
 ```
 ==> The Xcode Command Line Tools will be installed.
@@ -115,7 +115,7 @@ PATH（パス）とは簡単に言うとファイルやフォルダ（ディレ�
 
 それでは先ほどインストールした Homebrewを使ってPHPをインストールしていきましょう。
 
-下記のコードを実行すればインストールできます。
+以下のコードを実行すればインストールできます。
 
 ```
 brew install php
@@ -164,7 +164,7 @@ Error: No formulae found in taps.
 
 これは、Homebrewのコアが開発者によってアップデートされたことによるもので、再度コアを追加し直す必要があります。
 
-対処法は下記の手順です。
+対処法は以下の手順です。
 
 1. `rm -rf $(brew --repo homebrew/core)`のコードを実行し、現在のコアを削除
 2. `brew tap homebrew/core`のコードを実行

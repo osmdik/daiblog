@@ -7,7 +7,7 @@ tags: ["WordPress","ContactForm7","jQuery"]
 
 この記事では、ContactForm7とjQueryを組み合わせて１画面内で完結するステップ式フォームの作り方を解説します。
 
-下記が完成版のフォームです。（サンプルなので送信しても運営者には受信されません。）
+以下のが完成版のフォームです。（サンプルなので送信しても運営者には受信されません。）
 
 \[contact-form-7 id="860" title="ステップ式フォーム"\]
 
@@ -17,7 +17,7 @@ tags: ["WordPress","ContactForm7","jQuery"]
 
 HTMLは導入したContactForm7で新規追加したフォームのフォーム欄に記述しましょう。
 
-下記がHTMLのコードです。
+以下のがHTMLのコードです。
 
 ```
 <div class="form-horizontal c-form-step">
@@ -77,7 +77,7 @@ HTMLは導入したContactForm7で新規追加したフォームのフォーム�
 </div><!-- /.form-horizontal c-form-step -->
 ```
 
-STEP1、SETP２などのステップのナビゲーションは下記コードで表示されます。
+STEP1、SETP２などのステップのナビゲーションは以下のコードで表示されます。
 
 ```
 <div class="c-form-step__step-items">
@@ -87,7 +87,7 @@ STEP1、SETP２などのステップのナビゲーションは下記コード�
 </div>
 ```
 
-また、ステップ式フォームの内容は下記コードで囲まれた箇所が１つのステップとなります。
+また、ステップ式フォームの内容は以下のコードで囲まれた箇所が１つのステップとなります。
 
 ```
 <div class="c-form-step__wrapper-box">
@@ -262,7 +262,7 @@ label {
 
 とはいっても、これまでのHTMLとCSSと一緒にコピーして使うと問題なく動作するので安心してください。
 
-下記がjQueryのコードです。
+以下のがjQueryのコードです。
 
 ```
 function nextStep(){
@@ -352,10 +352,10 @@ $('.c-form-step__wrapper-box input,.c-form-step__wrapper-box textarea, .c-form-s
 
 はじめ、各投稿ごとに設定できるカスタムjsにjQueryのコードを記述していたのですが、jQueryが読み込まれていないというようなエラーが発生し、正常に動作しませんでした。
 
-テーマ付属のjQueryの読み込みに関する設定をいじっても解消さないため、下記の対策を講じました。
+テーマ付属のjQueryの読み込みに関する設定をいじっても解消さないため、以下の対策を講じました。
 
 1. jQueryを別のjsファイル（cf7step.js）に記述し、テーマファイル内にアップロード
-2. 下記コードをfooter.phpのbody終了タグの直前に記述
+2. 以下のコードをfooter.phpのbody終了タグの直前に記述
 
 ```
 <?php if ( is_single( 'contactform-jquery-step-form' ) ): ?>
@@ -376,6 +376,6 @@ $('.c-form-step__wrapper-box input,.c-form-step__wrapper-box textarea, .c-form-s
 
 それぞれ使用感やできることが異なるのでクライアントの要望に応じて使い分けるのがおすすめです。
 
-ちなみにこの記事のコードは今回のステップ式フォームの作り方は下記記事を参考にしました。
+ちなみにこの記事のコードは今回のステップ式フォームの作り方は以下の記事を参考にしました。
 
 [https://shortycolossus.honker.biz/WordPress/code-recipe-273.html](https://shortycolossus.honker.biz/WordPress/code-recipe-273.html)

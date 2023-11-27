@@ -11,7 +11,7 @@ tags: ["JavaScript", "async", "defer"]
 
 ## JavaScript の記述位置は body の終了タグの直前
 
-JavaScript の記述位置は、下記のように body の終了タグの直前に書くのが一般的です。
+JavaScript の記述位置は、以下のように body の終了タグの直前に書くのが一般的です。
 
 ```
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ JavaScript の記述位置は、下記のように body の終了タグの直前
 
 理由は、HTML 要素をすべて読み込んだ後に、JavaScript を実行できるからです。
 
-下記のように、head 内で JavaScript を読み込んだ場合、
+以下のように、head 内で JavaScript を読み込んだ場合、
 
 -   body タグ内の処理と表示の前に JavaScript の処理・実行され body タグ内の表示に時間がかかる。
 -   JavaScript で body タグ内の要素を処理する場合に、body タグ内の要素が処理されていないため、JavaScript で body タグ内の要素を処理できず、エラーとなる。
@@ -71,7 +71,7 @@ JavaScript の記述位置は、下記のように body の終了タグの直前
 
 そんなときのために、『async』属性と『defer』属性があります。
 
-通常、body の終了タグの直前に JavaScript を記述した場合、body タグ内の HTML の読み込み、JavaScript の読み込みと実行は下記のような順番で行われます。
+通常、body の終了タグの直前に JavaScript を記述した場合、body タグ内の HTML の読み込み、JavaScript の読み込みと実行は以下のような順番で行われます。
 
 1. （script 開始タグまでの）HTML の読み込み
 2. HTML の読み込みを中断し script タグ内の JavaScript を読み込み・実行
@@ -92,7 +92,7 @@ JavaScript の記述位置は、下記のように body の終了タグの直前
 
 つまり、JavaScript の読み込みと処理を非同期に行うことができるということになります。
 
-読み込みと実行は下記のような順番で行われます。
+読み込みと実行は以下のような順番で行われます。
 
 1. （script 開始タグまでの）HTML の読み込み
 2. HTML と script タグ内の JavaScript を並行して読み込み
@@ -118,7 +118,7 @@ JavaScript の読み込み間も HTML の読み込みを中断しないため、
 
 つまり、JavaScript を HTML と並行して読み込み、実行は遅らせることができます。
 
-読み込みと実行は下記のような順番で行われます。
+読み込みと実行は以下のような順番で行われます。
 
 1. （script 開始タグまでの）HTML の読み込み
 2. HTML と script タグ内の JavaScript を並行して読み込み
