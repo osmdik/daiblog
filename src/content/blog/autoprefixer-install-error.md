@@ -7,7 +7,7 @@ tags: ["autoprefixer"]
 
 最近、npm-script を用いてコーディング環境を作ろうと思い、必要なモジュールやパッケージをインストールし`npm run build`などで実行できるよう奮闘中です。
 
-その中で、autoprefixer を用いて`npx postcss style.css --use autoprefixer -o style.css`でベンダープレフィックスを付与しようとしたところ下記のエラー文が表示され、付与できませんでした。
+その中で、autoprefixer を用いて`npx postcss style.css --use autoprefixer -o style.css`でベンダープレフィックスを付与しようとしたところ以下のエラー文が表示され、付与できませんでした。
 
 ```
 Error [ERR_MODULE_NOT_FOUND]: Cannot find package
@@ -19,7 +19,7 @@ Error [ERR_MODULE_NOT_FOUND]: Cannot find package
 
 この、`Error [ERR_MODULE_NOT_FOUND]: Cannot find package`が表示され正常に動作しない原因は、postcss パッケージがインストールされていないからです。
 
-よくある解説記事では、autoprefixer は下記のコマンドでインストールできると紹介されています。
+よくある解説記事では、autoprefixer は以下のコマンドでインストールできると紹介されています。
 
 ```
 npm i postcss-cli autoprefixer -D
@@ -27,7 +27,7 @@ npm i postcss-cli autoprefixer -D
 
 npm install するだけで、依存関係にあるパッケージも一緒にインストールされるものもありますが、postcss はインストールされないようです。
 
-実は、インストールのコマンドを実行したときに下記の警告文が表示されています。
+実は、インストールのコマンドを実行したときに以下の警告文が表示されています。
 
 ```
 npm WARN postcss-cli@9.1.0 requires a peer of postcss@^8.0.0 but none is installed. You must install peer dependencies yourself.
@@ -37,13 +37,13 @@ npm WARN postcss-reporter@7.0.5 requires a peer of postcss@^8.1.0 but none is in
 
 インストールしたときは、package.json ファイルにパッケージ名とバージョンが記載されていたので正常にインストールされていたと思ってましたが、よく読んでみると、1 つ目の WARN には、「postcss-cli@9.1.0には、postcss@^8.0.0 が必要だけど、インストールされてないよ。自分でインストールしてね。」と書かれています。
 
-２つ目と 3 つ目の WARN でも、autoprefixer@10.4.4、postcss-reporter@7.0.5には、postcss@^8.0.0 が～と同じように書かれています。
+2つ目と3つ目の WARN でも、autoprefixer@10.4.4、postcss-reporter@7.0.5には、postcss@^8.0.0 が～と同じように書かれています。
 
 つまり、postcss をインストールすれば解決するということです。
 
 ## エラーの対処法
 
-このエラーは下記コマンドで解決します。
+このエラーは以下のコマンドで解決します。
 
 ```
 npm i postcss -D

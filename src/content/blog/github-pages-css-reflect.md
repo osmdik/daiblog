@@ -5,9 +5,9 @@ pubDate: 2021-10-28
 tags: ["CSS", "GitHub"]
 ---
 
-この記事では、GitHub にアップロードしてページを GitHub Pages に公開したページに CSS が反映されていないという時の対処法を紹介します。
+この記事では、GitHub にアップロードしてページを GitHub Pages に公開したページに CSS が反映されないという時の対処法を紹介します。
 
-先日、Webサイトを作り、保有しているレンタルサーバーにアップロードしたところ、作ったものをそのままアップロードしてうまく表示されました。
+先日、Webサイトを作り保有しているレンタルサーバーにアップロードしたところ、作ったものをそのままアップロードしてうまく表示されました。
 
 しかし GitHub にアップロードして公開したものは、CSS が反映されず、うまく表示されなかったので、対処法を備忘録として残します。
 
@@ -15,17 +15,17 @@ tags: ["CSS", "GitHub"]
 
 結論、HTML で読み込んでいた CSS のパスを変えることでうまく表示されました。
 
-もともと、下記の一般的な方法で CSS を読み込んでいました。
+もともと、以下の一般的な方法で CSS を読み込んでいました。
 
-```
+```html
 <link rel="stylesheet" href="css/style.css" />
 ```
 
 この状態でもレンタルサーバーアップロード時は問題なく表示されます。
 
-GitHub にアップロードし公開するためには、下記のようにパスを変更する必要があります。
+GitHub にアップロードし公開するためには、以下のようにパスを変更する必要があります。
 
-```
+```html
 <link rel="stylesheet" href="https://daiki-oshima.github.io/2021-dopf/css/style.css" />
 ```
 
@@ -37,9 +37,9 @@ GitHub にアップロードし公開するためには、下記のようにパ�
 
 CSS ファイルの読み込みと同様に、ローカルで読み込んでいたフォントも GitHub にアップロードし公開してもうまく反映されませんでした。
 
-ローカルでの構築時の内容が下記です。
+ローカルでの構築時の内容が以下です。
 
-```
+```scss
 @font-face {
 font-family: 'JosefinSans';
 src: url("fonts/josefin-sans-v17-latin-300.woff");
@@ -48,7 +48,7 @@ src: url("fonts/josefin-sans-v17-latin-300.woff");
 
 SCSS で＠font-face を用いて読み込みに記述していたパスを前述と同様の変更を加えると正常に読み込まれます。
 
-```
+```scss
 @font-face {
 font-family: 'JosefinSans';
 src: url("https://daiki-oshima.github.io/2021-dopf/fonts/josefin-sans-v17-latin-300.woff");

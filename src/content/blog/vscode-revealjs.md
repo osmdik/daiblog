@@ -9,7 +9,7 @@ tags: ["javascript", "VSCode"]
 
 この記事では、VSCode で Reveal.js を用いてプレゼンテーションスライドを作ってみた体験談を紹介します。
 
-具体的には、下記について紹介しています。
+具体的には、以下のについて紹介しています。
 
 -   VSCode で Reveal.js を用いたプレゼンテーションスライドを作る方法
 -   作ってみて感じたこと、難易度など
@@ -49,7 +49,7 @@ PC に[VSCode](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)�
 
 ### 拡張機能「vscode-reveal」をインストール
 
-インストールした VSCode を起動し、Ctrl + Shift + x 　を同時押しすると、画面左に拡張機能をインストールすることができるサイドバーが表示されます。
+インストールした VSCode を起動し、`Cmd + Shift + x` を同時押しすると、画面左に拡張機能をインストールすることができるサイドバーが表示されます。
 
 ![](/images/スクリーンショット-2021-06-01-071323-1-1.jpg)
 
@@ -67,7 +67,7 @@ VSCode-reveal のインストールが完了すれば Reveal.js を使用でき�
 
 今回作成した上で紹介したスライドの一部のコードを紹介します。
 
-```
+```md
 ---
 theme: simple
 transition: fade
@@ -91,13 +91,13 @@ JavaScriptライブラリです。
 ### 非エンジニアでも簡単
 ```
 
-Ctrl ＋ Shift ＋Ｐをクリックし、「Revealjs: Show presentation by side」を入力することで、分割画面でのプレビューを表示することができます。
+`Cmd + Shift + P`をクリックし、「Revealjs: Show presentation by side」を入力することで、分割画面でのプレビューを表示することができます。
 
 プレビューを見ながら資料を作成できる便利な機能です。
 
 ### ブラウザで表示確認
 
-Ctrl ＋ Shift ＋Ｐをクリックし、「Revealjs: Open presentation in browser」を入力することで作成したファイルをブラウザで確認することができます。
+`Cmd + Shift + P`をクリックし、「Revealjs: Open presentation in browser」を入力することで作成したファイルをブラウザで確認することができます。
 
 スライドの挙動や全体の雰囲気を確認しましょう。
 
@@ -105,7 +105,7 @@ Ctrl ＋ Shift ＋Ｐをクリックし、「Revealjs: Open presentation in brow
 
 配布するときや HTML でカスタマイズを行いときなどに、HTML と PDF でエクスポートすることができます。
 
-Ctrl ＋ Shift ＋Ｐをクリックし、「Revealjs: Export in HTML」を入力することで作成したファイルを HTML としてエクスポートすることができ、「Revealjs: Export in PDF」を入力することで作成したファイルを PDF としてエクスポートすることができます。
+`Cmd + Shift + P`をクリックし、「Revealjs: Export in HTML」を入力することで作成したファイルを HTML としてエクスポートすることができ、「Revealjs: Export in PDF」を入力することで作成したファイルを PDF としてエクスポートすることができます。
 
 エクスポートした HTML、PDF にも動きが引き継がれるので、そのままプレゼンすることも可能です。
 
@@ -115,6 +115,6 @@ Ctrl ＋ Shift ＋Ｐをクリックし、「Revealjs: Export in HTML」を入�
 
 僕自身 PowerPoint にも Google スライドにも慣れているほうなので、わざわざ Markdown 形式で書く必要もないかなと。
 
-ただ、コード書くのは楽しいので、楽しさ重視で LT とかの簡単なスライド作るならよいと思います！
+ただコードを書くのは楽しいので、楽しさ重視で LT などの簡単なスライドを作るためにはアリだと思います。
 
 以上、VScode で Reveal.js を使ってプレゼンスライド作ってみた話でした。

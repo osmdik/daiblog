@@ -11,7 +11,7 @@ SVG ファイルを扱うこと自体初めてだったので、SVG ファイル
 
 とりあえず、この記事で紹介する SVG アニメーションのデモです。
 
-[SVG アニメーションのデモ](https://work.daiblog923.com/svg-animation.html)
+[SVG アニメーションのデモ](https://codepen.io/doshimaf/pen/zYeRqOZ)
 
 ## SVG ファイルとは
 
@@ -43,13 +43,13 @@ SVG ファイルを０から自力でアニメーションさせることは難�
 
 ### 『SVG Artista』で SVG ファイルをアップロードする
 
-[デモ](https://work.daiblog923.com/svg-animation.html)のような線と塗のアニメーションを実装するためには、あらかじめ illustrator で画像や文字をアウトライン化しておき、線を付けておく必要があります。
+[デモ](https://codepen.io/doshimaf/pen/zYeRqOZ)のような線と塗のアニメーションを実装するためには、あらかじめ Illustrator で画像や文字をアウトライン化しておき、線を付けておく必要があります。
 
 作成した画像を SVG 形式で保存し、[SVG Artista](https://svgartista.net/)の左上「OPEN SVG」をクリックし SVG ファイルを開くことで簡単にアニメーションを作成できました。
 
 SVGArtista の画面左側に「STROKE ANIMATION」と「FILL ANIMATION」の編集画面があります。
 
-それぞれ下記を編集できるのでお好みでカスタマイズしてみましょう。
+それぞれ以下のを編集できるのでお好みでカスタマイズしてみましょう。
 
 -   STROKE ANIMATION：線のアニメーションを編集
 -   FILL ANIMATION：塗のアニメーションを編集
@@ -70,20 +70,20 @@ SVGArtista の画面左側に「STROKE ANIMATION」と「FILL ANIMATION」の編
 
 SVGArtista を使ってアニメーションを作成するときに僕自身がつまずいたところを最後に紹介しておきます。
 
-つまずいたところは下記の 2 点です。
+つまずいたところは以下の 2 点です。
 
--   illustrator の画像にアウトラインを付ける方法がわからない
+-   Illustrator の画像にアウトラインを付ける方法がわからない
 -   「animation type」が Transition だと消えるアニメーションになる
 
-### illustrator の画像にアウトラインを付ける方法がわからない
+### Illustrator の画像にアウトラインを付ける方法がわからない
 
-単純に illustrator のスキル不足です。
+単純に Illustrator のスキル不足です。
 
-僕自身 illustrator 初心者であり、ちゃんと学んだことがなかったので、アウトライン？パス？と SVG ファイルを作成するまでの段階でつまずきました。
+僕自身 Illustrator 初心者であり、ちゃんと学んだことがなかったので、アウトライン？パス？と SVG ファイルを作成するまでの段階でつまずきました。
 
 今回もなんとかググっていけましたが、作業効率を考えると基礎知識を付けておくべきかなと。
 
-これから「とりあえず illustrator は使える」レベルには知識とスキルを付けようと思います。
+これから「とりあえず Illustrator は使える」レベルには知識とスキルを付けようと思います。
 
 ## 「animation type」が Transition だと消えるアニメーションになる
 
