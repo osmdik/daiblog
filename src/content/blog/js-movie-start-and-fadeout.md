@@ -13,25 +13,23 @@ tags: ["javascript"]
 
 ## コード
 
-コードはこちら。
+HTML・CSSのコードはこちら。
 
-### HTML・CSS
-
-```
+```html
 <video id="load_movie" muted playsinline>
     <source src="./hogehoge.mp4" type="video/mp4">
     <source src="./hogehoge.webm" type="video/webm">
 </video>
 ```
 
-```
+```css
 #load_movie {
     position: fixed;
     top: 0;
     width: 100vw;
     height: 100vh;
     background: #FFF;
-    z-index: 9999999999;
+    z-index: 99999;
 }
 ```
 
@@ -47,9 +45,9 @@ CSS は動画を最上階のレイヤーに全画面で表示するための指�
 
 背景色はお好みで指定してください。
 
-### JavaScript
+JavaScriptsのコードはこちら。
 
-```
+```js
 const loadMovie = document.getElementById("load_movie");
 
 // ページ読み込み完了時に動画の再生し終了後にフェードアウトさせる

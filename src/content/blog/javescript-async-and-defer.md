@@ -13,7 +13,7 @@ tags: ["JavaScript", "async", "defer"]
 
 JavaScript の記述位置は、以下のように body の終了タグの直前に書くのが一般的です。
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +39,7 @@ JavaScript の記述位置は、以下のように body の終了タグの直前
 
 という問題が発生するからです。
 
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +61,7 @@ JavaScript の記述位置は、以下のように body の終了タグの直前
 -   JavaScript で body タグ内の要素を処理しない
 -   body タグ内の処理前に実行したい JavaScript がある
 
-という場合には、hea タグ内に JavaScript を記述しなければなりません。
+という場合には、head タグ内に JavaScript を記述しなければなりません。
 
 つまり、JavaScript での処理内容に応じて、記述位置を変えたほうが良いことになります。
 
@@ -81,7 +81,7 @@ JavaScript の記述位置は、以下のように body の終了タグの直前
 
 ### async 属性を追加した場合
 
-```
+```html
   <script src="sample.js" async></script>
   <script async>
     <!-- ここにJavaScriptのプログラムを記述します。 -->
@@ -107,7 +107,7 @@ JavaScript の読み込み間も HTML の読み込みを中断しないため、
 
 ### defer 属性を追加した場合
 
-```
+```html
   <script src="sample.js" defer></script>
   <script defer>
     <!-- ここにJavaScriptのプログラムを記述します。 -->
@@ -127,10 +127,6 @@ JavaScript の読み込み間も HTML の読み込みを中断しないため、
 async と違い、HTML 読み込み後に JavaScript が実行されるため、head 内に記述しても JavaScript 実行時に HTML が読み込まれていない状況がなくエラーを防ぐことができます。
 
 ## 終わりに
-
-STEP
-
-STEP
 
 JavaScript の記述位置は基本的に、body の終了タグの直前が良いです。
 

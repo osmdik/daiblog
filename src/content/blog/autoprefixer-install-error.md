@@ -37,7 +37,7 @@ npm WARN postcss-reporter@7.0.5 requires a peer of postcss@^8.1.0 but none is in
 
 インストールしたときは、package.json ファイルにパッケージ名とバージョンが記載されていたので正常にインストールされていたと思ってましたが、よく読んでみると、1 つ目の WARN には、「postcss-cli@9.1.0には、postcss@^8.0.0 が必要だけど、インストールされてないよ。自分でインストールしてね。」と書かれています。
 
-２つ目と 3 つ目の WARN でも、autoprefixer@10.4.4、postcss-reporter@7.0.5には、postcss@^8.0.0 が～と同じように書かれています。
+2つ目と3つ目の WARN でも、autoprefixer@10.4.4、postcss-reporter@7.0.5には、postcss@^8.0.0 が～と同じように書かれています。
 
 つまり、postcss をインストールすれば解決するということです。
 

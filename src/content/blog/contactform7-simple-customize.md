@@ -9,41 +9,35 @@ tags: ["WordPress", "ContactForm7"]
 
 この記事では、さらにシンプルで見やすい ContactForm7 のデザインカスタマイズを紹介します。
 
-こちらが完成版です。
-
-[完成版はこちら](/simple-contact/)
-
 ## HTML
 
-以下のが HTML です。
+```html
+<span class="must">必須</span> お名前 [text* your-name]
 
-```
-<span class="must">必須</span> お名前
-[text* your-name]
+<span class="must">必須</span> メールアドレス [email* your-email]
 
-<span class="must">必須</span> メールアドレス
-[email* your-email]
+<span class="free">任意</span> お問い合わせ種別 [select contact-menu
+include_blank "記事について" "Webサイト制作について" "中の人について" "その他"]
 
-<span class="free">任意</span> お問い合わせ種別
-[select contact-menu include_blank "記事について" "Webサイト制作について" "中の人について" "その他"]
+<span class="free">任意</span> お問い合わせ内容 [textarea your-message]
 
-<span class="free">任意</span> お問い合わせ内容
-[textarea your-message]
-
-<p>[acceptance accept-this-1 class:input2] スパムメール防止のため、こちらのボックスにチェックを入れてから送信してください。[/acceptance]</p>
+<p>
+	[acceptance accept-this-1 class:input2]
+	スパムメール防止のため、こちらのボックスにチェックを入れてから送信してください。[/acceptance]
+</p>
 
 [submit "送信"]
 ```
 
-今回のカスタマイズでは、必須項目には、以下のを項目名の前に入れます。
+今回のカスタマイズでは、必須項目には、以下を項目名の前に入れます。
 
-```
+```html
 <span class="must">必須</span>
 ```
 
-任意項目には、以下のを項目名の前に入れます。
+任意項目には、以下を項目名の前に入れます。
 
-```
+```html
 <span class="free">任意</span>
 ```
 
@@ -51,18 +45,16 @@ tags: ["WordPress", "ContactForm7"]
 
 ## CSS
 
-以下のが CSS となります。
-
-```
+```css
 /************************************
 ** シンプルお問い合わせフォームの入力
 ************************************/
 /* 必須マーク */
-.must{
+.must {
 	color: #fff;
 	margin-right: 10px;
 	padding: 6px 10px;
-	background: #F92931;
+	background: #f92931;
 	border-radius: 20px;
 }
 
@@ -83,7 +75,8 @@ form p {
 
 /* 入力項目を見やすくする */
 input.wpcf7-form-control.wpcf7-text,
-textarea.wpcf7-form-control.wpcf7-textarea,.wpcf7-select {
+textarea.wpcf7-form-control.wpcf7-textarea,
+.wpcf7-select {
 	width: 100%;
 	padding: 8px 15px;
 	margin-right: 10px;
@@ -102,22 +95,22 @@ input.wpcf7-form-control.wpcf7-text.wpcf7-valipubDates-as-required {
 
 /* 送信ボタンのデザイン */
 input.wpcf7-submit {
-    display: block;
-    padding: 15px;
-    width: 350px;
-    background: #000;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 700;
-    border-radius: 2px;
-    margin: 25px auto 0;
-    border: 2px solid #000;
-	transition: 0.7s
+	display: block;
+	padding: 15px;
+	width: 350px;
+	background: #000;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+	border-radius: 2px;
+	margin: 25px auto 0;
+	border: 2px solid #000;
+	transition: 0.7s;
 }
 input.wpcf7-submit:hover {
-    background: #fff;
-		color: #000;
-		border: 2px solid #000
+	background: #fff;
+	color: #000;
+	border: 2px solid #000;
 }
 
 /* エラーメッセージを見やすくする */
@@ -136,10 +129,11 @@ span.wpcf7-not-valid-tip,
 
 のみにしか適応していません。
 
-```
+```css
 /* 入力項目を見やすくする */
 input.wpcf7-form-control.wpcf7-text,
-textarea.wpcf7-form-control.wpcf7-textarea,.wpcf7-select {
+textarea.wpcf7-form-control.wpcf7-textarea,
+.wpcf7-select {
 	width: 100%;
 	padding: 8px 15px;
 	margin-right: 10px;
@@ -157,14 +151,16 @@ textarea.wpcf7-form-control.wpcf7-textarea,.wpcf7-select {
 
 メッセージ本文には以下のをそのまま使えます。
 
-お問い合わせされた方： \[your-name\] <\[your-email\]>
+```
+お問い合わせされた方：[your-name] <[your-email]>
 
-名前：\[your-name\]
-メールアドレス：\[your-email\]
-電話番号：\[your-tel\]
+名前：[your-name]
+メールアドレス：[your-email]
+電話番号：[your-tel]
 
-お問い合わせ内容： \[contact-menu\]
+お問い合わせ内容：[contact-menu]
 お問い合わせ内容詳細
-\[your-message\]
+[your-message]
+```
 
 作成したフォームは、ショートコードやブロックエディターのブロックの追加でページに埋め込みましょう。

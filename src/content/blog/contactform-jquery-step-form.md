@@ -7,19 +7,13 @@ tags: ["WordPress","ContactForm7","jQuery"]
 
 この記事では、ContactForm7とjQueryを組み合わせて１画面内で完結するステップ式フォームの作り方を解説します。
 
-以下のが完成版のフォームです。（サンプルなので送信しても運営者には受信されません。）
-
-\[contact-form-7 id="860" title="ステップ式フォーム"\]
-
 ## ステップ式フォーム用のHTML
 
 ![ステップ式フォーム用のHTMLの画像](/images/contactform-step11-1024x686.jpg)
 
 HTMLは導入したContactForm7で新規追加したフォームのフォーム欄に記述しましょう。
 
-以下のがHTMLのコードです。
-
-```
+```html
 <div class="form-horizontal c-form-step">
   <div class="c-form-step__step-items">
     <div class="c-form-step__step-items__item-box current">STEP1</div>
@@ -79,7 +73,7 @@ HTMLは導入したContactForm7で新規追加したフォームのフォーム�
 
 STEP1、SETP２などのステップのナビゲーションは以下のコードで表示されます。
 
-```
+```html
 <div class="c-form-step__step-items">
   <div class="c-form-step__step-items__item-box current">STEP1</div>
   <div class="c-form-step__step-items__item-box">STEP2</div>
@@ -89,7 +83,7 @@ STEP1、SETP２などのステップのナビゲーションは以下のコー�
 
 また、ステップ式フォームの内容は以下のコードで囲まれた箇所が１つのステップとなります。
 
-```
+```html
 <div class="c-form-step__wrapper-box">
 </div>
 ```
@@ -100,7 +94,7 @@ STEP1、SETP２などのステップのナビゲーションは以下のコー�
 
 CSSはカスタマイズの追加CSSやテーマファイル内のstyle.cssに記述してください。
 
-```
+```css
 /*-----------------------
 ステップ式フォーム
 ------------------------*/
@@ -262,9 +256,9 @@ label {
 
 とはいっても、これまでのHTMLとCSSと一緒にコピーして使うと問題なく動作するので安心してください。
 
-以下のがjQueryのコードです。
+以下がjQueryのコードです。
 
-```
+```js
 function nextStep(){
   const stepWrappers = $('.c-form-step__wrapper-box'); //stepのフォーム要素
   const stepItem = $('.c-form-step__step-items__item-box'); //stepの数字要素
@@ -357,7 +351,7 @@ $('.c-form-step__wrapper-box input,.c-form-step__wrapper-box textarea, .c-form-s
 1. jQueryを別のjsファイル（cf7step.js）に記述し、テーマファイル内にアップロード
 2. 以下のコードをfooter.phpのbody終了タグの直前に記述
 
-```
+```php
 <?php if ( is_single( 'contactform-jquery-step-form' ) ): ?>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script src="https://daiblog923.com/wp-content/themes/swell_child/cf7step.js"></script>
