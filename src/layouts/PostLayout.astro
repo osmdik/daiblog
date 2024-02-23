@@ -10,13 +10,13 @@ const { title, description, pubDate, updatedDate, tags } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-	<article class="prose max-w-full">
+	<article class="prose dark:prose-invert max-w-full">
 		<h1 class="text-xl lg:text-2xl">
 			{title}
 		</h1>
 		<div class="mb-12 flex flex-wrap gap-2 items-baseline">
 			<div
-				class="flex items-center flex-wrap gap-2 font-['Josefin_Sans'] font-light text-xs text-gray-600"
+				class="flex items-center flex-wrap gap-2 font-['Josefin_Sans'] font-light text-xs text-gray-600 dark:text-gray-300"
 			>
 				<p class="my-0 whitespace-nowrap">
 					Publish :{" "}
