@@ -3,10 +3,11 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
+import react from '@astrojs/react';
 
 export default defineConfig({
 	site: 'https://blog.osmdik.com',
-	integrations: [mdx(), sitemap(), tailwind(), partytown({
+	integrations: [mdx(), sitemap(), tailwind(), react(), partytown({
 		// Adds dataLayer.push as a forwarding-event.
 		config: {
 			forward: ["dataLayer.push"],
