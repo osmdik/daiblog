@@ -15,6 +15,8 @@ tags: ["WordPress", "Astro"]
 
 なお、技術的な話はまた別記事で書いていけたらと思うので、ここでは割愛します。
 
+[https://github.com/osmdik/daiblog](https://github.com/osmdik/daiblog)
+
 ## リニューアルした理由
 
 リニューアルした理由は２つです。
@@ -70,3 +72,5 @@ Astroで構築してVercelにデプロイすれば、無料プランで問題な
 移行を通して、フロントエンドの技術は移り変わりも早くより便利になっているものも多いので、個人のプロジェクトを通して実際に触りつつ学べるのは重要だなと思いました。
 
 今年は、昨年メモしたものを整理し記事にして公開することを目標にしているので、少しずつ更新してきます。
+
+[https://github.com/osmdik/daiblog](https://github.com/osmdik/daiblog)
