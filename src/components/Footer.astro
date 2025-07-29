@@ -1,9 +1,16 @@
 ---
 const today = new Date();
+const currentYear = today.getFullYear();
+const startYear = 2024;
+
+// 年表示ロジック：開始年より後の場合は範囲表示、同じ年の場合は単年表示
+const yearDisplay = currentYear > startYear 
+	? `${startYear}-${currentYear}` 
+	: `${currentYear}`;
 ---
 
 <footer class="pt-16 sm:pt-20 pb-4 sm:pb-8">
 	<p class="font-['Josefin_Sans'] text-xs text-center text-gray-500">
-		&copy; {today.getFullYear()} Daiki Oshima. All rights reserved.
+		&copy; {yearDisplay} Daiki Oshima. All rights reserved.
 	</p>
 </footer>
