@@ -41,3 +41,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### ダークモード
 TailwindCSSのclass戦略でダークモードを実装。`ThemeIcon` コンポーネントでトグル機能を提供。
+
+## コミットメッセージルール
+
+このプロジェクトでは Conventional Commits 仕様に従います。詳細は `documents/commit-message-rules.md` を参照してください。
