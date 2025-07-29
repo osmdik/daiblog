@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import ShareButtons from "../components/ShareButtons.tsx";
 import type { PaginationData } from "../utils/pagination";
 import "@fontsource/josefin-sans";
 
@@ -10,6 +11,7 @@ type Props = CollectionEntry<"blog">["data"] & {
 };
 
 const { title, description, pubDate, updatedDate, tags, pagination } = Astro.props;
+const currentUrl = Astro.url.href;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -50,6 +52,8 @@ const { title, description, pubDate, updatedDate, tags, pagination } = Astro.pro
 		</div>
 		<slot />
 	</article>
+	
+	<ShareButtons url={currentUrl} title={title} client:load />
 	
 	{pagination && (
 		<nav class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700" aria-label="記事ナビゲーション">
