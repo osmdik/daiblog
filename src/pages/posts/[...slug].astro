@@ -1,20 +1,25 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
+import { getPaginationData } from '../../utils/pagination';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts.map((post) => ({
 		params: { slug: post.slug },
-		props: post,
+		props: { post, posts },
 	}));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = {
+	post: CollectionEntry<'blog'>;
+	posts: CollectionEntry<'blog'>[];
+};
 
-const post = Astro.props;
+const { post, posts } = Astro.props;
 const { Content } = await post.render();
+const pagination = getPaginationData(posts, post.slug);
 ---
 
-<PostLayout {...post.data}>
+<PostLayout {...post.data} pagination={pagination}>
 	<Content />
 </PostLayout>

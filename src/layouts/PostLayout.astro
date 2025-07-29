@@ -2,11 +2,14 @@
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import type { PaginationData } from "../utils/pagination";
 import "@fontsource/josefin-sans";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & {
+	pagination?: PaginationData;
+};
 
-const { title, description, pubDate, updatedDate, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, tags, pagination } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -47,4 +50,40 @@ const { title, description, pubDate, updatedDate, tags } = Astro.props;
 		</div>
 		<slot />
 	</article>
+	
+	{pagination && (
+		<nav class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700" aria-label="記事ナビゲーション">
+			<div class="flex justify-between items-center">
+				<div class="flex-1">
+					{pagination.nextPost && (
+						<a 
+							href={`/posts/${pagination.nextPost.slug}/`}
+							class="group flex flex-col items-start p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+							aria-label={`前の記事: ${pagination.nextPost.data.title}`}
+						>
+							<span class="text-sm text-gray-500 dark:text-gray-400 mb-1">← 前の記事</span>
+							<span class="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+								{pagination.nextPost.data.title}
+							</span>
+						</a>
+					)}
+				</div>
+				
+				<div class="flex-1 text-right">
+					{pagination.previousPost && (
+						<a 
+							href={`/posts/${pagination.previousPost.slug}/`}
+							class="group flex flex-col items-end p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+							aria-label={`次の記事: ${pagination.previousPost.data.title}`}
+						>
+							<span class="text-sm text-gray-500 dark:text-gray-400 mb-1">次の記事 →</span>
+							<span class="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+								{pagination.previousPost.data.title}
+							</span>
+						</a>
+					)}
+				</div>
+			</div>
+		</nav>
+	)}
 </BaseLayout>
