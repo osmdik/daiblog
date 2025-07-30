@@ -25,13 +25,13 @@ daiblog is a personal technical blog created by Daiki Oshima, a frontend enginee
 
 ### Core Framework
 
-- **[Astro](https://astro.build/)** `5.12.5` - Static site generator
-- **[React](https://react.dev/)** `19.1.1` - Interactive components
-- **[TypeScript](https://www.typescriptlang.org/)** `5.2.2` - Type safety
+- **[Astro](https://astro.build/)** - Static site generator
+- **[React](https://react.dev/)** - Interactive components
+- **[TypeScript](https://www.typescriptlang.org/)** - Type safety
 
 ### Styling & UI
 
-- **[TailwindCSS](https://tailwindcss.com/)** `3.4.17` - Utility-first CSS framework
+- **[TailwindCSS](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)** - Beautiful typographic defaults
 - **[@fontsource/josefin-sans](https://fontsource.org/)** - Web font optimization
 
