@@ -1,15 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProfileCard from "../components/ProfileCard.astro";
 ---
 
-<BaseLayout title="My Profile" description="My Profile">
-	<div class="prose max-w-full">
-		<h2>My Profile</h2>
-		<p>
-			当サイトをご覧いただきありがとうございます。運営者の大嶋大輝です。フロントエンドエンジニアをしています。
-			業務では WordPerss Developer、個人で Next.js や Astro など触っています。趣味は読書。
-		</p>
-		<hr>
+<BaseLayout title="プロフィール | daiblog" description="大嶋大輝のプロフィールページ。フロントエンドエンジニアとしての経歴や技術スタックを紹介しています。">
+	<div class="max-w-4xl mx-auto">
+		<h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Profile</h1>
+		
+		<!-- プロフィールカード -->
+		<div class="mb-12">
+			<ProfileCard variant="full" />
+		</div>
+
+		<!-- キャリアタイムライン -->
+		<div class="prose max-w-full dark:prose-invert">
+			<h2>Career Timeline</h2>
+			<hr>
 		<ol class="list-none relative border-l border-gray-300">
 			<li class="mb-8 -ml-2">
 				<div
@@ -84,5 +90,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 				</time>
 			</li>
 		</ol>
+			</div>
+		</div>
 	</div>
 </BaseLayout>

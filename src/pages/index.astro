@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProfileCard from "../components/ProfileCard.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 const posts = (await getCollection("blog")).sort(
@@ -12,13 +13,19 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<!-- 簡易プロフィール -->
+	<div class="mb-12">
+		<ProfileCard variant="compact" />
+	</div>
+
+	<!-- タグ一覧 -->
 	<div
-		class="mb-8 flex items-center flex-wrap gap-2 font-['Josefin_Sans'] font-light text-xs text-gray-600"
+		class="mb-8 flex items-center flex-wrap gap-2 font-['Josefin_Sans'] font-light text-xs text-gray-600 dark:text-gray-400"
 	>
 		{
 			tags.map((tag) => (
 				<a
-					class="inline-block align-bottom px-1 pt-1 rounded-sm text-inherit bg-slate-200 whitespace-nowrap"
+					class="inline-block align-bottom px-1 pt-1 rounded-sm text-inherit bg-slate-200 dark:bg-gray-700 hover:bg-slate-300 dark:hover:bg-gray-600 whitespace-nowrap transition-colors"
 					href={`/tags/${tag}`}
 				>
 					{tag}
