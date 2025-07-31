@@ -1,9 +1,26 @@
 ---
+import { getCollection } from "astro:content";
+
 interface Props {
   variant?: 'full' | 'compact';
 }
 
 const { variant = 'full' } = Astro.props;
+
+// プロフィールデータを取得
+const profileEntries = await getCollection('profile');
+const profileData = profileEntries[0]?.data;
+
+// スキルをカテゴリ別に色分け
+const getSkillColor = (category: string) => {
+  const colors = {
+    language: 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200',
+    framework: 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200',
+    cms: 'bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200',
+    styling: 'bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200',
+  };
+  return colors[category as keyof typeof colors] || 'bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200';
+};
 ---
 
 <div class={`profile-card ${variant === 'compact' ? 'p-6' : 'p-8'} bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700`}>
@@ -11,8 +28,8 @@ const { variant = 'full' } = Astro.props;
   <div class="flex items-center space-x-4 mb-6">
     <div class="relative">
       <img 
-        src="/images/avatar.png" 
-        alt="大嶋大輝のプロフィール画像" 
+        src={profileData?.avatar || "/images/avatar.png"}
+        alt={`${profileData?.name || '大嶋大輝'}のプロフィール画像`}
         class={`rounded-full object-cover border-2 border-gray-200 dark:border-gray-600 ${variant === 'compact' ? 'w-16 h-16' : 'w-24 h-24'}`}
         width={variant === 'compact' ? 64 : 96}
         height={variant === 'compact' ? 64 : 96}
@@ -21,12 +38,12 @@ const { variant = 'full' } = Astro.props;
     </div>
     
     <div class="flex-1">
-      <h3 class="text-xl font-bold text-gray-900 dark:text-white">大嶋大輝</h3>
-      <p class="text-gray-600 dark:text-gray-300">Frontend Engineer</p>
+      <h3 class="text-xl font-bold text-gray-900 dark:text-white">{profileData?.name || '大嶋大輝'}</h3>
+      <p class="text-gray-600 dark:text-gray-300">{profileData?.title || 'Frontend Engineer'}</p>
       {variant === 'full' && (
         <div class="flex items-center space-x-2 mt-1">
-          <span class="text-sm text-gray-500 dark:text-gray-400">📍 Japan</span>
-          <span class="text-sm text-green-500">● Available</span>
+          <span class="text-sm text-gray-500 dark:text-gray-400">📍 {profileData?.location || 'Japan'}</span>
+          <span class="text-sm text-green-500">● {profileData?.availability || 'Available'}</span>
         </div>
       )}
     </div>
@@ -36,29 +53,25 @@ const { variant = 'full' } = Astro.props;
   <div class="mb-6">
     {variant === 'compact' ? (
       <p class="text-sm text-gray-600 dark:text-gray-300">
-        フロントエンドエンジニア。WordPress Developer として業務に従事し、個人では Next.js や Astro などのモダンな技術に取り組んでいます。
+        {profileData?.bio?.slice(0, 100) || 'フロントエンドエンジニア。WordPress Developer として業務に従事し、個人では Next.js や Astro などのモダンな技術に取り組んでいます。'}...
       </p>
     ) : (
       <p class="text-gray-600 dark:text-gray-300">
-        当サイトをご覧いただきありがとうございます。フロントエンドエンジニアとして活動している大嶋大輝です。
-        業務では WordPress Developer として働き、個人では Next.js や Astro などのモダンな Web 技術に取り組んでいます。
-        趣味は読書で、技術書からビジネス書まで幅広く読んでいます。
+        {profileData?.bio || '当サイトをご覧いただきありがとうございます。フロントエンドエンジニアとして活動している大嶋大輝です。業務では WordPress Developer として働き、個人では Next.js や Astro などのモダンな Web 技術に取り組んでいます。趣味は読書で、技術書からビジネス書まで幅広く読んでいます。'}
       </p>
     )}
   </div>
 
   <!-- スキル（full版のみ） -->
-  {variant === 'full' && (
+  {variant === 'full' && profileData?.skills && (
     <div class="mb-6">
       <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-3">Tech Stack</h4>
       <div class="flex flex-wrap gap-2">
-        <span class="px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">JavaScript</span>
-        <span class="px-3 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">TypeScript</span>
-        <span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full">React</span>
-        <span class="px-3 py-1 text-xs font-medium bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full">Next.js</span>
-        <span class="px-3 py-1 text-xs font-medium bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">Astro</span>
-        <span class="px-3 py-1 text-xs font-medium bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 rounded-full">WordPress</span>
-        <span class="px-3 py-1 text-xs font-medium bg-cyan-100 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 rounded-full">TailwindCSS</span>
+        {profileData.skills.map((skill) => (
+          <span class={`px-3 py-1 text-xs font-medium rounded-full ${getSkillColor(skill.category)}`}>
+            {skill.name}
+          </span>
+        ))}
       </div>
     </div>
   )}

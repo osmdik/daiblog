@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+
+// プロフィールデータを取得
+const profileEntries = await getCollection('profile');
+const timelineData = profileEntries[0]?.data?.timeline || [];
+---
+
+<div class="prose max-w-full dark:prose-invert">
+  <h2>Career Timeline</h2>
+  <hr>
+  <ol class="list-none relative border-l border-gray-300">
+    {timelineData.map((item) => (
+      <li class="mb-8 -ml-2">
+        <div class="absolute w-3 h-3 bg-gray-300 rounded-full mt-2.5 -left-1.5 border border-white"></div>
+        <time class="font-['Josefin_Sans'] mb-1 text-xs text-gray-400">
+          {item.date}
+        </time>
+        {item.title && (
+          <h5>{item.title}</h5>
+        )}
+        {item.description && (
+          <p class={`text-sm text-gray-600 ${item.link ? 'mb-4' : ''}`}>
+            {item.description}
+          </p>
+        )}
+        {item.link && (
+          <a
+            href={item.link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-normal"
+          >
+            {item.link.text}
+          </a>
+        )}
+      </li>
+    ))}
+  </ol>
+</div>
