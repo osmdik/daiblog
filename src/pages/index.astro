@@ -3,13 +3,14 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProfileCard from "../components/ProfileCard.astro";
+import TagList from "../components/TagList.astro";
+import { getAllTags } from "../utils/tags";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 const posts = (await getCollection("blog")).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-const allPosts = await getCollection("blog");
-const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+const tags = await getAllTags();
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -19,19 +20,8 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 	</div>
 
 	<!-- タグ一覧 -->
-	<div
-		class="mb-8 flex items-center flex-wrap gap-2 font-['Josefin_Sans'] font-light text-xs text-gray-600 dark:text-gray-400"
-	>
-		{
-			tags.map((tag) => (
-				<a
-					class="inline-block align-bottom px-1 pt-1 rounded-sm text-inherit bg-slate-200 dark:bg-gray-700 hover:bg-slate-300 dark:hover:bg-gray-600 whitespace-nowrap transition-colors"
-					href={`/tags/${tag}`}
-				>
-					{tag}
-				</a>
-			))
-		}
+	<div class="mb-8">
+		<TagList tags={tags} />
 	</div>
 	<div>
 		<ul>
