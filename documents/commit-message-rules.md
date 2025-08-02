@@ -48,9 +48,18 @@
 
 ## Footer（オプション）
 
-- **Issue 参照**: `Closes #123`, `Fixes #456`
+- **Issue 参照**: `Closes #123`, `Fixes #456`, `Refs #789`
 - **共同作成者**: `Co-authored-by: Name <email>`
 - **破壊的変更**: `BREAKING CHANGE: 詳細説明`
+
+### Issue 参照について
+
+GitHub の Issue と連携する際は以下のキーワードを使用：
+
+- **`Closes #123`**: Issue をクローズする（機能完了時）
+- **`Fixes #456`**: バグ Issue を修正完了
+- **`Refs #789`**: Issue に関連するが未完了
+- **`Addresses #012`**: Issue の一部に対処
 
 ## 破壊的変更の表記
 
