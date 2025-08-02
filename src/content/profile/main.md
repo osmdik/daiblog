@@ -1,11 +1,14 @@
 ---
 name: "大嶋大輝"
-title: "Frontend Engineer"
-location: "Japan"
-availability: "Available"
+title: "Software Engineer"
+location: "Shimane, Japan"
 avatar: "/images/avatar.png"
-bio: "当サイトをご覧いただきありがとうございます。フロントエンドエンジニアとして活動している大嶋大輝です。業務では WordPress Developer として働き、個人では Next.js や Astro などのモダンな Web 技術に取り組んでいます。趣味は読書で、技術書からビジネス書まで幅広く読んでいます。"
+bio: "教育系ベンチャーでNext.js・TypeScriptを使って開発しているソフトウェアエンジニア。コーヒーを片手にコードを書き、時々キャンプで自然と戯れています。このブログでは開発で躓いたこと、学んだこと、「なるほど！」と思ったことを備忘録として綴っています。"
 skills:
+  - name: "HTML"
+    category: "language"
+  - name: "CSS"
+    category: "language"
   - name: "JavaScript"
     category: "language"
   - name: "TypeScript"
@@ -18,36 +21,30 @@ skills:
     category: "framework"
   - name: "WordPress"
     category: "cms"
-  - name: "TailwindCSS"
+  - name: "Tailwind CSS"
+    category: "styling"
+  - name: "Chakra UI"
     category: "styling"
 timeline:
   - date: "2020.07"
-    title: "Web制作会社でインターンシップ"
-    description: "HTML・CSSなどの基礎的なコーディングを独学を半年ほどした後、Web制作会社のインターンシップにコーダーとしてJoinしました。"
+    title: "Web制作会社でインターンシップ開始"
+    description: "HTML・CSSなどの基礎的なコーディングを独学で半年ほど学習した後、Web制作会社でコーダーとしてインターンシップを開始しました。"
   - date: "2021.01"
     title: "インターンシップ先の制作会社に入社"
-    description: "半年ほどのインターンシップを経て、入社しました。コーディングだけでなく、ディレクションやSNS運用、保守管理などの業務にも携わりました。"
+    description: "半年間のインターンシップを経て正式に入社しました。コーディングだけでなく、ディレクションやSNS運用、保守管理などの幅広い業務に携わりました。"
   - date: "2022.07"
-    title: "個人事業主となる"
-    description: "本業の傍ら、クラウドワークスやランサーズなど副業でWeb制作をしており、個人事業主となりました。"
+    title: "個人事業主として副業開始"
+    description: "本業と並行して、クラウドワークスやランサーズでのWeb制作を開始し、個人事業主として登録しました。"
     link:
       url: "https://en-filer.com/"
       text: "→ enFielr"
   - date: "2022.08"
-    title: "自社開発の会社へ転職"
-    description: "WordPressテーマやプラグインを開発する会社へエンジニアとしてJoinしました。リモートワークとなったので、通勤時間も勉強できるように。"
+    title: "WordPress開発会社へ転職"
+    description: "WordPressテーマやプラグインを開発・販売する会社へWordPress Developerとして転職しました。これまでのテーマを使用する側から、開発・販売する側へとポジションが変わりました。"
+  - date: "2024.04"
+    title: "教育系ベンチャー企業へ転職"
+    description: "モダンな技術スタックを使った開発に携わりたく、AI人材育成と DX を支援する教育系ベンチャー企業へ Software Engineer として転職しました。個人開発で使用していた Next.js や TypeScript を業務でも活用できるようになりました。"
   - date: "現在"
     title: ""
     description: ""
 ---
-
-# プロフィール
-
-フロントエンドエンジニアとして、モダンなWeb技術を駆使したユーザーエクスペリエンスの向上に取り組んでいます。
-
-## 現在の取り組み
-
-- WordPress開発（業務）
-- モダンフロントエンド技術の習得
-- 個人ブログ運営
-- 技術記事の執筆
