@@ -1,25 +1,12 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import TagList from "../../components/TagList.astro";
+import { getAllTags } from "../../utils/tags";
 
-const allPosts = await getCollection("blog");
-const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+const tags = await getAllTags();
 const pageTitle = "Tag index";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<div
-		class="flex items-center flex-wrap gap-2 font-['Josefin_Sans'] font-light text-xs text-gray-600"
-	>
-		{
-			tags.map((tag) => (
-				<a
-					class="inline-block align-bottom px-1 pt-1 rounded-sm text-inherit bg-slate-200 whitespace-nowrap"
-					href={`/tags/${tag}`}
-				>
-					{tag}
-				</a>
-			))
-		}
-	</div>
+	<TagList tags={tags} />
 </BaseLayout>

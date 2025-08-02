@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import ShareButtons from "../components/ShareButtons.tsx";
+import TagList from "../components/TagList.astro";
 import type { PaginationData } from "../utils/pagination";
 import "@fontsource/josefin-sans";
 
@@ -35,20 +36,7 @@ const currentUrl = Astro.url.href;
 					)
 				}
 			</div>
-			{
-				tags && (
-					<div class="flex items-center flex-wrap gap-2 font-['Josefin_Sans'] font-light text-xs text-gray-600">
-						{tags.map((tag) => (
-							<a
-								class="inline-block align-bottom px-1 pt-1 rounded-sm text-inherit bg-slate-200 whitespace-nowrap"
-								href={`/tags/${tag}`}
-							>
-								{tag}
-							</a>
-						))}
-					</div>
-				)
-			}
+			{tags && <TagList tags={tags} />}
 		</div>
 		<slot />
 	</article>
