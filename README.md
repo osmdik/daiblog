@@ -2,6 +2,10 @@
 
 > Technical note by Daiki Oshima - A minimal and modern blog built with Astro
 
+> [!IMPORTANT]
+> **このリポジトリは [osmdik/osmdik-web](https://github.com/osmdik/osmdik-web) に移行しました。**
+> daiblog の開発は今後 [osmdik/osmdik-web](https://github.com/osmdik/osmdik-web) で行われます。最新のコードや更新はそちらを参照してください。このリポジトリはアーカイブとして残されています。
+
 ## 🚀 Overview
 
 daiblog is a personal technical blog created by Daiki Oshima, a frontend engineer. This site serves as an accumulation of technical knowledge and outputs, built with modern web technologies for optimal performance and developer experience.
